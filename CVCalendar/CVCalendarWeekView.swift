@@ -194,7 +194,7 @@ extension CVCalendarWeekView {
 extension CVCalendarWeekView {
     public func createDayViews() {
         dayViews = [CVCalendarDayView]()
-        for i in 1...7 {
+        for i in 1...(calendarView.calendarWeekMode.rawValue) {
             let dayView = CVCalendarDayView(weekView: self, weekdayIndex: i)
 
             safeExecuteBlock({

@@ -71,6 +71,10 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         return .monday
     }
     
+    func calendarWeekMode() -> Mode {
+        return .fiveday
+    }
+    
     // MARK: Optional methods
     
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {

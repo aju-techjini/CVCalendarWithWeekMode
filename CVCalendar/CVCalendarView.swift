@@ -240,7 +240,7 @@ extension CVCalendarView {
                     }
 
                     weekViewSize = CGSize(width: width, height: height)
-                    dayViewSize = CGSize(width: (width / 7.0) - hSpace, height: height)
+                    dayViewSize = CGSize(width: (width / CGFloat(calendarWeekMode.rawValue)) - hSpace, height: height)
                     validated = true
 
                     contentController

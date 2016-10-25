@@ -15,6 +15,7 @@ public final class CVCalendarMenuView: UIView {
     public var symbolViews: [UILabel]?
 
     public var firstWeekday: Weekday? = .sunday
+    public var calendarWeekMode: Mode? = .sevenday
     public var dayOfWeekTextColor: UIColor? = .darkGray
     public var dayofWeekBackgroundColor: UIColor? = .clear
     public var dayOfWeekTextUppercase: Bool? = true
@@ -56,6 +57,7 @@ public final class CVCalendarMenuView: UIView {
     public func setupAppearance() {
         if let delegate = delegate {
             firstWeekday~>delegate.firstWeekday?()
+            calendarWeekMode~>delegate.calendarWeekMode!()
             dayOfWeekTextColor~>delegate.dayOfWeekTextColor?()
             dayofWeekBackgroundColor~>delegate.dayOfWeekBackGroundColor?()
             dayOfWeekTextUppercase~>delegate.dayOfWeekTextUppercase?()
@@ -100,13 +102,13 @@ public final class CVCalendarMenuView: UIView {
         // Add symbols.
         self.symbolViews = [UILabel]()
         let space = 0 as CGFloat
-        let width = self.frame.width / 7 - space
+        let width = self.frame.width / CGFloat(calendarWeekMode!.rawValue) - space
         let height = self.frame.height
 
         var x: CGFloat = 0
         let y: CGFloat = 0
 
-        for i in 0..<7 {
+        for i in 0..<calendarWeekMode!.rawValue {
             x = CGFloat(i) * width + space
 
             let symbol = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
@@ -131,7 +133,7 @@ public final class CVCalendarMenuView: UIView {
     public func commitMenuViewUpdate() {
         if let _ = delegate {
             let space = 0 as CGFloat
-            let width = self.frame.width / 7 - space
+            let width = self.frame.width / CGFloat(calendarWeekMode!.rawValue) - space
             let height = self.frame.height
 
             var x: CGFloat = 0
