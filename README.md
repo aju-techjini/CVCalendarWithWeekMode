@@ -5,7 +5,7 @@ Added additional week mode to CVCalendar which gives an option to switch between
 To use this mode, use the added delegate
 calendarWeekMode() -> Mode
 
-Sample useage:
+Sample usage:
 func calendarWeekMode() -> Mode {
   return .fiveday
 }
