@@ -334,7 +334,6 @@ extension CVCalendarDayView {
 extension CVCalendarDayView {
     public func moveDotMarkerBack(_ unwinded: Bool, coloring: Bool) {
         var coloring = coloring
-        var dotIndex = 0
         for dotMarker in dotMarkers {
             if let calendarView = calendarView, let dotMarker = dotMarker {
                 var shouldMove = true
@@ -351,7 +350,7 @@ extension CVCalendarDayView {
                         if unwinded {
                             if let myColor = delegate.dotMarker?(colorOnDayView: self) {
                                 color = isOut ?
-                                    appearance?.dayLabelWeekdayOutTextColor : myColor[dotIndex]
+                                    appearance?.dayLabelWeekdayOutTextColor : myColor[0]
                             }
                         } else {
                             color = appearance?.dotMarkerColor
@@ -403,7 +402,6 @@ extension CVCalendarDayView {
                 } else {
                     colorMarker()
                 }
-                dotIndex += 1
             }
         }
     }

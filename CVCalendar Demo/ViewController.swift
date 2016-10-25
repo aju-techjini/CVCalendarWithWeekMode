@@ -152,9 +152,9 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
         
-        let red = CGFloat(arc4random_uniform(600) / 255)
-        let green = CGFloat(arc4random_uniform(600) / 255)
-        let blue = CGFloat(arc4random_uniform(600) / 255)
+        let red = CGFloat(64 / 255)
+        let green = CGFloat(128 / 255)
+        let blue = CGFloat(255 / 255)
         
         let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
 
