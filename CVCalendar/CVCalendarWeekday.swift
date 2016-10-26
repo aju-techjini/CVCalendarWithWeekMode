@@ -19,6 +19,7 @@ import Foundation
 }
 
 @objc public enum CVCalendarMode: Int {
+    case threeday = 3
     case fiveday = 5
     case sevenday = 7
 }

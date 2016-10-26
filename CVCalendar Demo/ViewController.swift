@@ -72,7 +72,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     }
     
     func calendarWeekMode() -> Mode {
-        return .fiveday
+        return .threeday
     }
     
     // MARK: Optional methods
